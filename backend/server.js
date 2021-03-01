@@ -20,6 +20,7 @@ connection.once('open', () => {
 const eventRouter = require('./routes/event');
 
 app.use('/event', eventRouter);
+app.use('/', express.static('../frontend'));
 
 app.listen(port, () => {
     console.log('Server is running on port: ' + port);
