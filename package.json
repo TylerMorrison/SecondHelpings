@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "react": "react-scripts start",
     "backend": "cd backend && npm start",
-    "dev": "concurrently \"npm run backend\" \"npm run react\""
+    "start": "concurrently \"npm run backend\" \"npm run react\""
   },
   "eslintConfig": {
     "extends": [
