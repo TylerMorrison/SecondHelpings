@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "concurrently": "^6.0.0",
     "react": "^17.0.1",
     "react-datepicker": "^3.6.0",
     "react-dom": "^17.0.1",
@@ -17,13 +18,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "heroku-prebuild": "npm install --save-dev concurrently",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "react": "react-scripts start",
     "backend": "cd backend && npm start",
-    "start": "concurrently \"npm run backend\" \"npm run react\""
+    "start": "npm run concurrently",
+    "concurrently": "concurrently \"npm run backend\" \"npm run react\""
   },
   "eslintConfig": {
     "extends": [
