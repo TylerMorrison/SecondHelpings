@@ -115,7 +115,7 @@ export default class EditEvent extends Component {
         axios.post('https://secondhelpings.herokuapp.com/event/update/'+this.props.match.params.id, event)
             .then(res => console.log(res.data));
 
-        window.location = '/board';
+        this.props.history.push('/board');
     }
 
     render() {
@@ -184,7 +184,7 @@ export default class EditEvent extends Component {
                     </div>
 
                     <div className="form-group">
-                    <input type="submit" value="Edit Event" className="btn btn-primary" />
+                        <input type="submit" value="Edit Event" className="btn btn-primary" />
                     </div>
                 </form>
             </div>
