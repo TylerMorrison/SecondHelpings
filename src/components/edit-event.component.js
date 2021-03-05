@@ -30,7 +30,7 @@ export default class EditEvent extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/event/'+this.props.match.params.id)
+        axios.get('https://secondhelpings.herokuapp.com/event'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     product_name: response.data.product_name,
