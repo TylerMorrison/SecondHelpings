@@ -30,7 +30,7 @@ export default class EditEvent extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://secondhelpings.herokuapp.com/event'+this.props.match.params.id)
+        axios.get('https://secondhelpings.herokuapp.com/event/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     product_name: response.data.product_name,
@@ -112,7 +112,7 @@ export default class EditEvent extends Component {
 
         console.log(event);
 
-        axios.post('http://localhost:5000/event/update/'+this.props.match.params.id, event)
+        axios.post('https://secondhelpings.herokuapp.com/event/update/'+this.props.match.params.id, event)
             .then(res => console.log(res.data));
 
         window.location = '/board';

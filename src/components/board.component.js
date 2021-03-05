@@ -33,7 +33,7 @@ export default class Board extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://secondhelpings.herokuapp.com/event')
+        axios.get('https://secondhelpings.herokuapp.com/event/')
             .then(res => {
                 this.setState({
                     events: res.data
@@ -45,7 +45,7 @@ export default class Board extends Component {
     }
 
     deleteEvent(id) {
-        axios.delete('https://secondhelpings.herokuapp.com/event'+id)
+        axios.delete('https://secondhelpings.herokuapp.com/event/'+id)
             .then(response => {console.log(response.data)});
         
         this.setState({
