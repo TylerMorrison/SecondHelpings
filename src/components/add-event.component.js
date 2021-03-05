@@ -93,7 +93,7 @@ export default class AddEvent extends Component {
 
         console.log(event);
 
-        axios.post('http://localhost:5000/event/add', event)
+        axios.post('https://secondhelpings.herokuapp.com/event/add', event)
             .then(res => console.log(res.data));
 
         window.location = '/board';
