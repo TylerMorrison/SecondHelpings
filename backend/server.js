@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
 
 require('dotenv').config();
@@ -21,8 +22,9 @@ connection.once('open', () => {
 
 const eventRouter = require('./routes/event');
 
+app.use(express.static(path.join(__dirname, '../build')));
 app.use('/event', eventRouter);
-// app.use('/', express.static('../frontend'));
+// app.use('/', express.static('../build'));
 
 app.listen(port, () => {
     console.log('Server is running on port: ' + port);
