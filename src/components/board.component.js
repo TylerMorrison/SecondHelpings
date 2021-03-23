@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-// import { Button, View } from 'react-native';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Table, Container, Row, Col, Button } from 'react-bootstrap';
+import moment from 'moment';
+require('../styles/board.scss');
 
 const Event = props => (
     <tr>
@@ -20,8 +22,8 @@ const Event = props => (
     </tr>
 )
 
-
 export default class Board extends Component {
+    
     constructor(props) {
         super(props);
 
@@ -54,6 +56,31 @@ export default class Board extends Component {
     }
 
     eventList() {
+        for(var i = 0; i < this.state.events.length; i++)
+        {
+            console.log(this.state.events[i].date_entered);
+        }
+
+        this.state.events.map(currentevent => {
+            //format date_entered
+            var mbDate = moment(currentevent.date_entered);
+            var newDate = mbDate.format('dddd, MMMM Do YYYY');
+            var newTime = mbDate.format('hh:mm a');
+            currentevent.date_entered = newDate+'\n'+newTime;
+
+            //format event_start
+            mbDate = moment(currentevent.event_start);
+            newDate = mbDate.format('dddd, MMMM Do YYYY');
+            newTime = mbDate.format('hh:mm a');
+            currentevent.event_start = newDate+'\n'+newTime;
+
+            //format event_end
+            mbDate = moment(currentevent.event_end);
+            newDate = mbDate.format('dddd, MMMM Do YYYY');
+            newTime = mbDate.format('hh:mm a');
+            currentevent.event_end = newDate+'\n'+newTime;
+        });
+
         return this.state.events.map(currentevent => {
             return <Event event={currentevent} deleteEvent={this.deleteEvent} key={currentevent._id}/>;
         });
@@ -61,44 +88,38 @@ export default class Board extends Component {
 
     render() {
         return (
-            <div>
-                <h3>Board</h3> 
-                {/* <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.button_1}>
-                        <Button
-                        title="Yes"
-                        onPress={() => {
-                            console.log('clicked');
-                        }}
-                    />
-                    </View>
-                    <View style={styles.button_1}>
-                        <Button
-                        title="No"
-                        onPress={() => {
-                            console.log('clicked');
-                        }}
-                        />
-                    </View>
-                </View> */}
-                <table className = "table">
-                    <thead className = "thead-light">
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Date Entered</th>
-                            <th>Event Start</th>
-                            <th>Event End</th>
-                            <th>Location</th>
-                            <th>Contact Information</th>
-                            <th>Description</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { this.eventList() }
-                    </tbody>
-                </table>
+            <div className="board-component">
+                <div className="page">
+                    <Container fluid>
+                        <Row className="board-title">
+                            <Col xs={12} sm={2}/>
+                            <Col xs={12} sm={8}>
+                                <h3>Board</h3>
+                            </Col>
+                            <Col xs={12} sm={2}>
+                                <Button href="/add" variant="dark">Add Event</Button>
+                            </Col>
+                        </Row>
+                        <Table striped bordered responsive hover variant="dark">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Date Entered</th>
+                                    <th>Event Start</th>
+                                    <th>Event End</th>
+                                    <th>Location</th>
+                                    <th>Contact Information</th>
+                                    <th>Description</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                { this.eventList() }
+                            </tbody>
+                        </Table>
+                    </Container>    
+                </div>
             </div>
         )
     }

@@ -100,8 +100,13 @@ export default class AddEvent extends Component {
     }
 
     render() {
+
+        const pageStyle = {
+            paddingTop: "50px"
+        };
+
         return (
-            <div>
+            <div style={pageStyle}>
                 <h3>Create New Event</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 

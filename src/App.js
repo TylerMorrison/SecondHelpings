@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
-import Navbar from "./components/navbar.component";
+import SHNavbar from "./components/shnavbar.component";
 import Home from "./components/home.component";
 import Board from "./components/board.component";
 import Facts from "./components/facts.component";
@@ -12,11 +13,11 @@ import EditEvent from "./components/edit-event.component";
 function App() {
   return (
     <Router>
-      <div className="container">
-        <Navbar />
+      <div className="container-fluid" style={{ padding: '0px' }}>
+        <SHNavbar />
         <br/>
         <Route path="/" exact component={Home} />
-        <Route path="/board" component={Board} />
+        <Route path="/board" exact component={Board} />
         <Route path="/facts" exact component={Facts} />
         <Route path="/login" exact component={LogIn} />
         <Route path="/add" exact component={AddEvent} />

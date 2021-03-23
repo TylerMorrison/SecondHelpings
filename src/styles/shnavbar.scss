@@ -1,0 +1,57 @@
+.shnavbar-component { 
+    @media only screen and (min-width: 382px){
+        .navbar-expand {
+            justify-content: flex-start;
+        }
+    }
+
+    @media only screen and (min-width: 193px) and (max-width: 381px) {
+        .navbar-expand {
+            justify-content: center;
+        }
+    }
+
+    @media only screen and (max-width: 192px) {
+        .navbar-expand {
+            justify-content: center;
+        }
+    }
+
+    .navbar-light .navbar-brand {
+        color: white;
+
+        &:hover {
+            color:white;
+            filter: brightness(1);
+        }
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: white;
+
+        &:hover {
+            color: white;
+            filter: brightness(0.75);
+        }
+    }
+
+    .navbar-expand {
+        flex-flow: row wrap;
+    }
+
+    .nb-link {
+        font-size: 1em;
+    }
+
+    .nb-title {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+
+    .nb-background {
+        background: url(https://www.cpp.edu/common/2018/assets/img/blue-green-poly.png);
+        background-position: center, top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 
 export default class LogIn extends Component {
     render() {
+        const pageStyle = {
+            paddingTop: "50px"
+        };
+
         return (
-            <div>
-                <p>You are on the Log In page</p>
+            <div style={pageStyle}>
+                
             </div>
         );
     }

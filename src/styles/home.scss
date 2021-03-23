@@ -1,0 +1,154 @@
+// Navbar-page margin adjustment 
+@media only screen and (min-width: 382px){ //large screens (desktop)
+    .page {
+        padding-top: 32px; //navbar size - 8px(for padding)
+    }
+}
+
+@media only screen and (min-width: 193px) and (max-width: 381px) { // medium screens (most phones)
+    .page {
+        padding-top: 72px; //navbar size - 8px(for padding)
+    }
+}
+
+@media only screen and (max-width: 192px) { // small screens (small phones)
+    .page {
+        padding-top: 112px; //navbar size - 8px(for padding)
+    }
+}
+
+//home component image-row margin-top adjustment based on if it's stacked or not (small or large screen)
+@media (min-width: 992px) {
+    .home-image-row {
+        [class^="col"] {
+            padding-top: 1vw;
+        }
+    }   
+}
+
+@media (max-width: 991px) {
+    .home-image-row {
+        [class^="col"] {
+            padding-top: 4vw;
+        }
+    }  
+}
+
+.home-component{
+
+    .page { // The whole home page
+        padding-left: 0px;
+        padding-right: 0px;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            filter: brightness(0.75);
+        }
+
+        &:active {
+            color: red;
+            filter: brightness(1);
+        }
+    }
+
+    .carousel { 
+        width: 100%;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    .row { 
+        margin-top: 4vw; //space between every row
+    }
+
+    .stat { //everything but carousel
+        padding-top: 2vw; //space between carousel and rest of content
+        justify-content: center;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    .charts { //top 3 charts from cali community college survery
+        margin-top: 2vw; //spacing from carousel
+        text-align: center;
+
+        .titleLink { //Link to survey 
+            background-color: #01426A;
+            border-radius: 0.5vw;
+            margin-left: 10%;
+            margin-right: 10%;
+
+            a {
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+            }
+        }
+            
+        .row{
+            margin-top: 0;
+            justify-content: center; //center text in survery row 
+        }
+    }
+
+    .image-row {
+        img {
+            vertical-align: middle;
+        } 
+    }
+
+    .section-divider {
+        margin-top: 10vw;
+    }
+
+    .resource-rows {
+
+        .col{
+            vertical-align: middle;
+        }
+
+        .row{
+            align-items: center;
+            border-radius: 2vw;
+            padding: 2vw;
+        }
+
+        .img{
+            text-align: center;
+            width: 75%;
+        }
+    }
+
+    .what-is-second-helpings {
+        background-color: #faf1c7;
+        text-align: center;
+        justify-content: center;
+        
+    }
+
+    .other-resources {
+        font-size: 3rem;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .blue-background {
+        background-color: #7597ac;
+    }
+
+    .blue-green-background {
+        background-color: #78a2a8;
+    }
+
+    .green-background {
+        background-color: #62a78c;
+    }
+}
+
