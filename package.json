@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm run build && cd backend && node server.js",
+    "start": "cd backend && node server.js",
     "watch": "npm-watch"
   },
   "eslintConfig": {
