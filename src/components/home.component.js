@@ -52,7 +52,7 @@ export default class Home extends Component {
 
                                 <Row className="home-image-row">
                                     <Col xs={12} lg={4}>
-                                        <Image src='assets/home_resources/Food Security Among California Community College Survey Respondents.JPG' fluid />
+                                        <Image src='assets/home_resources/Food Security Among California Community College Survey Respondents.jpg' fluid />
                                         <h3>Most Students Experience Food Insecurities</h3>
                                         <p>According to the 2016 and 2018 #RealCollege Survey, 50% of students experienced food insecurities in the last 30 days.
                                         From this group of students, 20% assessed at the low level of security and 30% at the lowest level.
