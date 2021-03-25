@@ -1,0 +1,108 @@
+// Navbar-page margin adjustment 
+@media only screen and (min-width: 382px){ //large screens (desktop)
+    .page {
+        padding-top: 32px; //navbar size - 8px(for padding)
+    }
+}
+
+@media only screen and (min-width: 193px) and (max-width: 381px) { // medium screens (most phones)
+    .page {
+        padding-top: 72px; //navbar size - 8px(for padding)
+    }
+}
+
+@media only screen and (max-width: 192px) { // small screens (small phones)
+    .page {
+        padding-top: 112px; //navbar size - 8px(for padding)
+    }
+}
+
+.edit-event-component{
+    .container-fluid {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .row {
+        margin-top: 2vw;
+        justify-content: center;
+    }
+    form{
+        width: 100%;
+    }
+
+    .edit-event-title {
+        background-color: #01426A;
+        border-radius: 1vw;
+        margin-right: 15%;
+        margin-left: 15%;
+        h3 {
+            color: white;
+            margin: 0;
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
+    }
+
+    input{
+        color: white;
+        background-color: #343A40;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        padding: .375rem .75rem;
+    }
+
+    input.date-picker{
+        width: 15rem;
+    }
+
+    input.form-control{
+        color: white;
+        background-color: #343A40;
+    }
+
+    .react-datepicker {
+        background-color: #343A40;
+        color: white;
+        border-color: black;
+    }
+
+    .react-datepicker__header{
+        background-color: #343A40;
+        border-color: black;
+    }
+
+    .react-datepicker__day--disabled, 
+    .react-datepicker__month-text--disabled, 
+    .react-datepicker__quarter-text--disabled, 
+    .react-datepicker__year-text--disabled {
+        color: white;
+        filter: brightness(0.5);
+
+        &:hover {
+            color: white!important;
+            filter: brightness(0.5);
+        }
+    }
+
+    .react-datepicker__current-month,
+    .react-datepicker__day-name {
+        color: white;
+    }
+
+    .react-datepicker-time__header, 
+    .react-datepicker-year-header, 
+    .react-datepicker__day,
+    .react-datepicker__time-name{
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    .submit-btn{
+        margin-top: 2vw;
+        text-align: center;
+    }
+}

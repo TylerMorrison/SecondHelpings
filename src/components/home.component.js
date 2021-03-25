@@ -45,7 +45,7 @@ export default class Home extends Component {
                         <Row className="charts">
                             <Col>
                                 <Row className="titleLink">
-                                    <a href='https://hope4college.com/wp-content/uploads/2019/03/RealCollege-CCCCO-Report.pdf' target="_blank" >
+                                    <a href='https://hope4college.com/wp-content/uploads/2019/03/RealCollege-CCCCO-Report.pdf' target="_blank" rel="noreferrer" >
                                         California Community Colleges #RealCollege Survey
                                     </a>
                                 </Row>
@@ -105,7 +105,7 @@ export default class Home extends Component {
                             {/* Poly Pantry */}
                             <Row className="blue-background">
                                 <Col xs={12} lg={5, {order:"first"}}>
-                                    <a href="https://www.cpp.edu/basicneeds/food-resources/poly-pantry.shtml" target="_blank">
+                                    <a href="https://www.cpp.edu/basicneeds/food-resources/poly-pantry.shtml" target="_blank" rel="noreferrer">
                                         <Image src="assets/home_resources/poly-pantry.png" roundedCircle fluid />
                                     </a>
                                 </Col>
@@ -121,7 +121,7 @@ export default class Home extends Component {
                                 
                             <Row className="blue-green-background">
                                 <Col xs={12} lg={5, {order:"last"}}>
-                                    <a href="https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program" target="_blank">
+                                    <a href="https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program" target="_blank" rel="noreferrer">
                                         <Image src="assets/home_resources/snap.png" roundedCircle fluid />
                                     </a>
                                 </Col>
@@ -131,14 +131,14 @@ export default class Home extends Component {
                                     <p>
                                     SNAP is a federal program that provides benefits to low-income individuals 
                                     and families that are used at stores to purchase food. Eligiblity for the program can be found 
-                                    <a href="https://www.fns.usda.gov/snap/recipient/eligibility" target="_blank"> here</a>.
+                                    <a href="https://www.fns.usda.gov/snap/recipient/eligibility" target="_blank" rel="noreferrer"> here</a>.
                                     </p>
                                 </Col>
                             </Row>
 
                             <Row className="green-background">
                                 <Col xs={12} lg={5, {order:"first"}}>
-                                    <a href="https://www.fns.usda.gov/wic" target="_blank">
+                                    <a href="https://www.fns.usda.gov/wic" target="_blank" rel="noreferrer">
                                         <Image src="assets/home_resources/WIC.jpg" roundedCircle fluid />
                                     </a>
                                 </Col>
@@ -150,7 +150,7 @@ export default class Home extends Component {
                                     and infants and children up to age five who are at nutritional risk supplemental foods, 
                                     health care referrals, and nutrition education. Application for the program is done through your 
                                     state or local agency by appointment which can be found 
-                                    <a href="https://www.fns.usda.gov/contacts?f%5B1%5D=program%3A32" target="_blank"> here</a>.
+                                    <a href="https://www.fns.usda.gov/contacts?f%5B1%5D=program%3A32" target="_blank" rel="noreferrer"> here</a>.
                                     </p>
                                 </Col>
                             </Row>

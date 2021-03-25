@@ -1,7 +1,10 @@
 import axios from 'axios';
+import moment from 'moment';
 import React, { Component } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+require('../styles/edit-event.scss');
 
 export default class EditEvent extends Component {
     constructor(props) {
@@ -120,78 +123,98 @@ export default class EditEvent extends Component {
 
     render() {
 
-        const pageStyle = {
-            paddingTop: "50px"
-        };
-
         return (
-            <div style={ pageStyle }>
-                <h3>Edit Event</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group"> 
-                        <label>Product Name: </label>
-                        <input type="text"
-                            required
-                            className="form-control"
-                            value={this.state.product_name}
-                            onChange={this.onChangeProductName}
-                            />
-                    </div>
-                    <div className="form-group"> 
-                        <label>Quantity: </label>
-                        <input  type="text"
-                            className="form-control"
-                            value={this.state.quantity}
-                            onChange={this.onChangeQuantity}
-                            />
-                    </div>
-                    <div className="form-group">
-                        <label>Start of Event: </label>
-                        <div>
-                            <DatePicker
-                                selected={this.state.event_start}
-                                onChange={this.onChangeEventStart}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <label>End of Event: </label>
-                        <div>
-                            <DatePicker
-                                selected={this.state.event_end}
-                                onChange={this.onChangeEventEnd}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group"> 
-                        <label>Location: </label>
-                        <input  type="text"
-                            className="form-control"
-                            value={this.state.location}
-                            onChange={this.onChangeLocation}
-                            />
-                    </div>
-                    <div className="form-group"> 
-                        <label>Contact Information: </label>
-                        <input  type="text"
-                            className="form-control"
-                            value={this.state.contact_info}
-                            onChange={this.onChangeContactInfo}
-                            />
-                    </div>
-                    <div className="form-group"> 
-                        <label>Description: </label>
-                        <input  type="text"
-                            className="form-control"
-                            value={this.state.description}
-                            onChange={this.onChangeDescription}
-                            />
-                    </div>
+            <div className="edit-event-component">
+                <div className="page">
+                    <Container fluid>
+                        <Row className="edit-event-title">
+                            <h3>Create New Event</h3>
+                        </Row>
+                        <Row>
+                            <form onSubmit={this.onSubmit}>
+                                <div className="form-group"> 
+                                    <label>Product Name: </label>
+                                    <input type="text"
+                                        required
+                                        className="form-control"
+                                        value={this.state.product_name}
+                                        onChange={this.onChangeProductName}
+                                        />
+                                </div>
+                                <div className="form-group"> 
+                                    <label>Quantity: </label>
+                                    <input  type="text"
+                                        className="form-control"
+                                        value={this.state.quantity}
+                                        onChange={this.onChangeQuantity}
+                                        />
+                                </div>
+                                <div className="form-group">
+                                    <label>Start of Event: </label>
+                                    <div>
+                                        <DatePicker
+                                            className="date-picker"
+                                            selected={this.state.event_start}
+                                            onChange={this.onChangeEventStart}
+                                            timeInputLabel="Time:"
+                                            dateFormat="MMMM d, yyyy h:mm aa"
+                                            showTimeInput
+                                            locale="en-US"
+                                            withPortal
+                                            minDate={new Date()}
+                                            portalId="portal"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label>End of Event: </label>
+                                    <div>
+                                        <DatePicker
+                                            className="date-picker"
+                                            selected={this.state.event_end}
+                                            onChange={this.onChangeEventEnd}
+                                            timeInputLabel="Time:"
+                                            dateFormat="MMMM d, yyyy h:mm aa"
+                                            showTimeInput
+                                            locale="en-US"
+                                            withPortal
+                                            minDate={this.state.event_start}
+                                            portalId="portal"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="form-group"> 
+                                    <label>Location: </label>
+                                    <input  type="text"
+                                        className="form-control"
+                                        value={this.state.location}
+                                        onChange={this.onChangeLocation}
+                                        />
+                                </div>
+                                <div className="form-group"> 
+                                    <label>Contact Information: </label>
+                                    <input  type="text"
+                                        className="form-control"
+                                        value={this.state.contact_info}
+                                        onChange={this.onChangeContactInfo}
+                                        />
+                                </div>
+                                <div className="form-group"> 
+                                    <label>Description: </label>
+                                    <input  type="text"
+                                        className="form-control"
+                                        value={this.state.description}
+                                        onChange={this.onChangeDescription}
+                                        />
+                                </div>
 
-                    <div className="form-group">
-                        <input type="submit" value="Edit Event" className="btn btn-primary" />
-                    </div>
-                </form>
+                                <div className="form-group submit-btn">
+                                    <input type="submit" value="Edit Event" className="btn btn-dark" />
+                                </div>
+                            </form>
+                        </Row>
+                    </Container>
+                </div>
             </div>
         );
     }
