@@ -35,7 +35,8 @@ export default class Board extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://secondhelpings.herokuapp.com/event/')
+
+        axios.get('http://cppsecondhelpings.net/api/events/')
             .then(res => {
                 this.setState({
                     events: res.data
@@ -47,7 +48,7 @@ export default class Board extends Component {
     }
 
     deleteEvent(id) {
-        axios.delete('https://secondhelpings.herokuapp.com/event/'+id)
+        axios.delete('http://cppsecondhelpings.net/api/events/'+id)
             .then(response => {console.log(response.data)});
         
         this.setState({
@@ -56,29 +57,21 @@ export default class Board extends Component {
     }
 
     eventList() {
-        for(var i = 0; i < this.state.events.length; i++)
-        {
-            console.log(this.state.events[i].date_entered);
-        }
 
         this.state.events.map(currentevent => {
-            //format date_entered
-            var mbDate = moment(currentevent.date_entered);
-            var newDate = mbDate.format('dddd, MMMM Do YYYY');
-            var newTime = mbDate.format('hh:mm a');
-            currentevent.date_entered = newDate+'\n'+newTime;
+            //format date_entered     'Thursday, August 2 1985 08:30 PM'
+            currentevent.date_entered = moment(currentevent.date_entered).format('LLLL');
 
             //format event_start
-            mbDate = moment(currentevent.event_start);
-            newDate = mbDate.format('dddd, MMMM Do YYYY');
-            newTime = mbDate.format('hh:mm a');
-            currentevent.event_start = newDate+'\n'+newTime;
+            currentevent.event_start = moment(currentevent.event_start).format('LLLL');
 
             //format event_end
-            mbDate = moment(currentevent.event_end);
-            newDate = mbDate.format('dddd, MMMM Do YYYY');
-            newTime = mbDate.format('hh:mm a');
-            currentevent.event_end = newDate+'\n'+newTime;
+            currentevent.event_end = moment(currentevent.event_end).format('LLLL');
+        });
+
+        //sort list by event_start 
+        this.state.events = this.state.events.sort((a, b) => {
+            return moment(a.event_start).format('X') - moment(b.event_start).format('X');
         });
 
         return this.state.events.map(currentevent => {

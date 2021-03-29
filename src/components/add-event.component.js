@@ -1,6 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 import React, { Component } from 'react';
+import history from "../history";
 import { Container, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -86,7 +87,7 @@ export default class AddEvent extends Component {
         });
     }
 
-    onSubmit(e) {
+    async onSubmit(e) {
         e.preventDefault();
 
         const event = {
@@ -102,10 +103,10 @@ export default class AddEvent extends Component {
 
         console.log(event);
 
-        axios.post('https://secondhelpings.herokuapp.com/event/add', event)
+        await axios.post('http://cppsecondhelpings.net/api/events/add/', event)
             .then(res => console.log(res.data));
 
-        this.props.history.push('/board');
+        history.push('/board');
     }
 
     render() {
@@ -130,8 +131,10 @@ export default class AddEvent extends Component {
                                 </div>
                                 <div className="form-group"> 
                                     <label>Quantity: </label>
-                                    <input  type="text"
+                                    <input  type="number"
                                         className="form-control"
+                                        min="1"
+                                        max="2147483647"
                                         value={this.state.quantity}
                                         onChange={this.onChangeQuantity}
                                         />
@@ -146,7 +149,6 @@ export default class AddEvent extends Component {
                                             timeInputLabel="Time:"
                                             dateFormat="MMMM d, yyyy h:mm aa"
                                             showTimeInput
-                                            locale="en-US"
                                             withPortal
                                             minDate={new Date()}
                                             portalId="portal"
@@ -163,7 +165,6 @@ export default class AddEvent extends Component {
                                             timeInputLabel="Time:"
                                             dateFormat="MMMM d, yyyy h:mm aa"
                                             showTimeInput
-                                            locale="en-US"
                                             withPortal
                                             minDate={this.state.event_start}
                                             portalId="portal"

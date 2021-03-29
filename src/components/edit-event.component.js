@@ -33,7 +33,7 @@ export default class EditEvent extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://secondhelpings.herokuapp.com/event/'+this.props.match.params.id)
+        axios.get('http://cppsecondhelpings.net/api/events/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     product_name: response.data.product_name,
@@ -97,9 +97,9 @@ export default class EditEvent extends Component {
         this.setState({
             description: e.target.value
         });
-    }
+    } 
 
-    onSubmit(e) {
+    async onSubmit(e) {
         e.preventDefault();
 
         const event = {
@@ -113,10 +113,8 @@ export default class EditEvent extends Component {
             description: this.state.description
         }
 
-        console.log(event);
-
-        axios.post('https://secondhelpings.herokuapp.com/event/update/'+this.props.match.params.id, event)
-            .then(res => console.log(res.data));
+        await axios.post('http://cppsecondhelpings.net/api/events/'+this.props.match.params.id, event)
+                        .then(res => console.log(res.data));
 
         this.props.history.push('/board');
     }
@@ -143,8 +141,10 @@ export default class EditEvent extends Component {
                                 </div>
                                 <div className="form-group"> 
                                     <label>Quantity: </label>
-                                    <input  type="text"
+                                    <input  type="number"
                                         className="form-control"
+                                        min="1"
+                                        max="2147483647"
                                         value={this.state.quantity}
                                         onChange={this.onChangeQuantity}
                                         />
@@ -159,9 +159,7 @@ export default class EditEvent extends Component {
                                             timeInputLabel="Time:"
                                             dateFormat="MMMM d, yyyy h:mm aa"
                                             showTimeInput
-                                            locale="en-US"
                                             withPortal
-                                            minDate={new Date()}
                                             portalId="portal"
                                         />
                                     </div>
@@ -176,7 +174,6 @@ export default class EditEvent extends Component {
                                             timeInputLabel="Time:"
                                             dateFormat="MMMM d, yyyy h:mm aa"
                                             showTimeInput
-                                            locale="en-US"
                                             withPortal
                                             minDate={this.state.event_start}
                                             portalId="portal"

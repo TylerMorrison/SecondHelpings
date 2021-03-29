@@ -19,10 +19,10 @@ connection.once('open', () => {
     console.log("MongoDB database connection established successfully");
 })
 
-const eventRouter = require('./routes/event');
+const eventRouter = require('./routes/events');
 
 app.use(express.static(path.join(__dirname, '../build')));
-app.use('/event', eventRouter);
+app.use('/api', eventRouter);
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../build/index.html'));
 });

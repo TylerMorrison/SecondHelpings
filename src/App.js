@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
@@ -10,9 +10,11 @@ import LogIn from "./components/login.component";
 import AddEvent from "./components/add-event.component";
 import EditEvent from "./components/edit-event.component";
 
+import history from "./history";
+
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div className="container-fluid" style={{ padding: '0px' }}>
         <SHNavbar />
         <br/>
@@ -26,8 +28,5 @@ function App() {
     </Router>
   );
 }
-
-
-
 
 export default App;

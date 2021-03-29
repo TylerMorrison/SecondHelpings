@@ -88,7 +88,7 @@ export default class Home extends Component {
 
                                 <p>Second Helpings is a resource for students who are impacted by food insecurities. 
                                     Second Helpings provides an online access point for event organizers and departments 
-                                    who have extra food to give that out to students in need.</p>
+                                    who have extra food to give out to students in need.</p>
 
                                 <p>Event organizers and deparments can post the food they are giving out, 
                                     in what location and at what time. Students can access these posts to get the resources
