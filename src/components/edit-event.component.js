@@ -73,6 +73,12 @@ export default class EditEvent extends Component {
         this.setState({
             event_start: e
         });
+        if(moment(e).isAfter(this.state.event_end)){
+            console.log("Event start is after event end")
+            this.setState({
+                event_end: e
+            });
+        }
     }
 
     onChangeEventEnd(e) {
