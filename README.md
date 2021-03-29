@@ -2,7 +2,7 @@
 	<img src="public/logo192.png"> Second Helpings
 </h1>
 
-> A MERN stack project with a REST API 
+> A MERN stack project with a REST API
 
 Second Helpings is a resource for students who are impacted by food insecurities. Second Helpings provides an online access point for event organizers and departments who have extra food to give out to students in need.
 

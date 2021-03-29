@@ -103,7 +103,7 @@ export default class AddEvent extends Component {
 
         console.log(event);
 
-        await axios.post('http://cppsecondhelpings.net/api/events/add/', event)
+        await axios.post('http://www.cppsecondhelpings.net/api/events/add/', event)
             .then(res => console.log(res.data));
 
         history.push('/board');

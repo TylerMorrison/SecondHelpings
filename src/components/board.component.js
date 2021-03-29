@@ -36,7 +36,7 @@ export default class Board extends Component {
 
     componentDidMount() {
 
-        axios.get('http://cppsecondhelpings.net/api/events/')
+        axios.get('http://www.cppsecondhelpings.net/api/events/')
             .then(res => {
                 this.setState({
                     events: res.data
@@ -48,7 +48,7 @@ export default class Board extends Component {
     }
 
     deleteEvent(id) {
-        axios.delete('http://cppsecondhelpings.net/api/events/'+id)
+        axios.delete('http://www.cppsecondhelpings.net/api/events/'+id)
             .then(response => {console.log(response.data)});
         
         this.setState({

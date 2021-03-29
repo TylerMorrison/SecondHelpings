@@ -33,7 +33,7 @@ export default class EditEvent extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://cppsecondhelpings.net/api/events/'+this.props.match.params.id)
+        axios.get('http://www.cppsecondhelpings.net/api/events/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     product_name: response.data.product_name,
@@ -119,7 +119,7 @@ export default class EditEvent extends Component {
             description: this.state.description
         }
 
-        await axios.post('http://cppsecondhelpings.net/api/events/'+this.props.match.params.id, event)
+        await axios.post('http://www.cppsecondhelpings.net/api/events/'+this.props.match.params.id, event)
                         .then(res => console.log(res.data));
 
         this.props.history.push('/board');
