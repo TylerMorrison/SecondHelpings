@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="public/logo192.png"> Second Helpings
+	<img src="public/logo192.png" width=80px height=80px> Second Helpings
 </h1>
 
 > A MERN stack project with a REST API
