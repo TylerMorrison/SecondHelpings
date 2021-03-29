@@ -119,7 +119,7 @@ export default class EditEvent extends Component {
             description: this.state.description
         }
 
-        await axios.post('http://www.cppsecondhelpings.net/api/events/'+this.props.match.params.id, event)
+        await axios.put('http://www.cppsecondhelpings.net/api/events/'+this.props.match.params.id, event)
                         .then(res => console.log(res.data));
 
         this.props.history.push('/board');
