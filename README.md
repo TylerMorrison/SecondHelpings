@@ -116,4 +116,4 @@ Data example
 
 
 ## License
-[MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
+[MIT](https://github.com/TylerMorrison/SecondHelpings/blob/master/LICENSE)
