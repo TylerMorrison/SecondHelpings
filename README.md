@@ -63,7 +63,7 @@ Content examples
 		"event_start":"2021-03-17T04:26:06.000Z",
 		"event_end":"2021-04-30T04:26:06.000Z",
 		"location":"Bld 1",
-		"contact_info":"John Smith
+		"contact_info":"John Smith",
 		"description":"Pepperoni",
 		"createdAt":"2021-02-02T05:26:26.585Z",
 		"updatedAt":"2021-03-27T08:24:13.575Z",
