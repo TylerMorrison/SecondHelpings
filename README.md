@@ -51,7 +51,7 @@ Root endpoint: www.cppsecondhelpings.net/api
 | /events/:id  | DELETE  | Delete a specific event  | {} |
 | /events/:id  | POST  | Update a specific event  | {} |
 
-##### /events
+#### /events
 Content examples
 ```json
 [
@@ -86,7 +86,7 @@ Content examples
 ]
 ```
 
-##### /events/add
+#### /events/add
 Data constraints
 ```json
 {
